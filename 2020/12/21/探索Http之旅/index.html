@@ -15,6 +15,17 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
 
     <title>探索Http之旅 | ChenTom</title>
     <link rel="icon" type="image/jpeg" href="/images.jpg">
@@ -31,6 +42,16 @@
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
 
 
 
@@ -234,7 +255,7 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+            <a href="https://github.com/linglongchen/ChenTomBlog/tree/master" class="waves-effect waves-light" target="_blank">
                 <i class="fab fa-github-square fa-fw"></i>Fork Me
             </a>
         </li>
@@ -291,7 +312,7 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+<a href="https://github.com/linglongchen/ChenTomBlog/tree/master" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
    data-tooltip="Fork Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -310,7 +331,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -471,12 +492,12 @@
 <p>以上来自百度百科。</p>
 <p>从百度百科中我们也可以知道HTTP是一个协议，并且是运行在TCP之上的(如果不知道什么是TCP可以看上一篇)。那么既然知道了是个协议，协议的理解就是双方交流的一种规定，规定双方交流时可以通过设定的协议进行交流，那么HTTP协议就是客户端与服务端进行交流的一种规定。</p>
 <p>HTTP协议规定了双方可以实现的操作，例如GET、POST、PUT、DELETE…..，通过这些操作客户端可以对服务端的资源进行获取以及修改等；</p>
-<p>HTTP协议还规定了客户端向服务端请求的方式，必须以http或者https为开头，比如<a target="_blank" rel="noopener" href="https://www.baidu.com/%EF%BC%8C%E8%BF%99%E6%A0%B7%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%89%8D%E8%83%BD%E8%AF%86%E5%88%AB%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AAHTTP%E8%AF%B7%E6%B1%82%EF%BC%8C%E5%B9%B6%E4%B8%94%E8%AF%BB%E5%8F%96%E8%AF%A5%E8%AF%B7%E6%B1%82%E6%89%A7%E8%A1%8C%E5%93%8D%E5%BA%94%E6%93%8D%E4%BD%9C%EF%BC%9B%E7%AC%AC%E4%B8%89HTTP%E5%8D%8F%E8%AE%AE%E8%BF%98%E8%A7%84%E5%AE%9A%E4%BA%86%E5%A6%82%E4%BD%95%E5%9C%A8URL%E4%B8%AD%E8%8E%B7%E5%8F%96%E6%8C%87%E5%AE%9A%E8%B5%84%E6%BA%90%EF%BC%8C%E6%AF%94%E5%A6%82%E6%88%91%E8%A6%81%E6%9F%A5%E7%9C%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E7%9A%84%E6%9F%90%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8Chttps://www.baidu.com/%E9%80%9A%E8%BF%87%E8%BF%99%E6%A0%B7http://ip:port/path/....%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E5%AF%B9%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E6%9F%90%E4%B8%AA%E8%B5%84%E6%BA%90%E7%9A%84%E8%8E%B7%E5%8F%96%E3%80%82">https://www.baidu.com/，这样服务端才能识别这是一个HTTP请求，并且读取该请求执行响应操作；第三HTTP协议还规定了如何在URL中获取指定资源，比如我要查看服务器中的某个页面，https://www.baidu.com/通过这样http://ip:port/path/....的方式实现对服务器中某个资源的获取。</a></p>
+<p>HTTP协议还规定了客户端向服务端请求的方式，必须以http或者https为开头，比如<a href="https://www.baidu.com/%EF%BC%8C%E8%BF%99%E6%A0%B7%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%89%8D%E8%83%BD%E8%AF%86%E5%88%AB%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AAHTTP%E8%AF%B7%E6%B1%82%EF%BC%8C%E5%B9%B6%E4%B8%94%E8%AF%BB%E5%8F%96%E8%AF%A5%E8%AF%B7%E6%B1%82%E6%89%A7%E8%A1%8C%E5%93%8D%E5%BA%94%E6%93%8D%E4%BD%9C%EF%BC%9B%E7%AC%AC%E4%B8%89HTTP%E5%8D%8F%E8%AE%AE%E8%BF%98%E8%A7%84%E5%AE%9A%E4%BA%86%E5%A6%82%E4%BD%95%E5%9C%A8URL%E4%B8%AD%E8%8E%B7%E5%8F%96%E6%8C%87%E5%AE%9A%E8%B5%84%E6%BA%90%EF%BC%8C%E6%AF%94%E5%A6%82%E6%88%91%E8%A6%81%E6%9F%A5%E7%9C%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E7%9A%84%E6%9F%90%E4%B8%AA%E9%A1%B5%E9%9D%A2%EF%BC%8Chttps://www.baidu.com/%E9%80%9A%E8%BF%87%E8%BF%99%E6%A0%B7http://ip:port/path/....%E7%9A%84%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E5%AF%B9%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E6%9F%90%E4%B8%AA%E8%B5%84%E6%BA%90%E7%9A%84%E8%8E%B7%E5%8F%96%E3%80%82">https://www.baidu.com/，这样服务端才能识别这是一个HTTP请求，并且读取该请求执行响应操作；第三HTTP协议还规定了如何在URL中获取指定资源，比如我要查看服务器中的某个页面，https://www.baidu.com/通过这样http://ip:port/path/....的方式实现对服务器中某个资源的获取。</a></p>
 <p>最后HTTP协议也规定了双方的响应消息以及状态码，可以理解为服务端执行了客户端的请求得到响应结果，服务器将响应结果返回给客户端，客户端收到响应结果，可以解析响应结果然后展示。响应结果中又包含了具体数据以及状态码等信息。状态码平时使用的比如200、404、400、500等都是一种状态码的规约，客户端可以根据这些状态码判断客户端收到请求后的执行状态，是否成功，以及是否异常等信息。</p>
 <p>以上就是对HTTP协议的一种理解，总结为：客户端与服务器通过这样的一种协议实现了彼此之间的通信，客户端发送的请求服务端可以解析并执行响应的操作，最后将得到的结果返回给客户端，客户端收到响应消息并解析展示。</p>
 <h2 id="2-浏览器请求数据的过程"><a href="#2-浏览器请求数据的过程" class="headerlink" title="2. 浏览器请求数据的过程?"></a>2. 浏览器请求数据的过程?</h2><p>说完了HTTP协议，知道了HTTP协议是什么，那么就开始探索平时发一个HTTP请求到底会经过怎样的一个过程，看看HTTP之旅到底是不是很玄幻？</p>
 <h3 id="2-1-浏览器解析URL"><a href="#2-1-浏览器解析URL" class="headerlink" title="2.1 浏览器解析URL"></a>2.1 浏览器解析URL</h3><p>探索第一站，浏览器站</p>
-<p>第一站就是在我们发请求的浏览器，学过计算机网络的都知道，在互联网中寻找一个主机都是通过IP来寻找的，那么在网络层中路由器只能通过IP来寻找目的主机，那么我们如果输入<a target="_blank" rel="noopener" href="http://www.baidu.com,路由器咋知道在哪个服务器,所以我们要在浏览器将www.baidu.com翻译一下,翻译成计算机网络中可以识别的地址,也就是ip./">www.baidu.com，路由器咋知道在哪个服务器，所以我们要在浏览器将www.baidu.com翻译一下，翻译成计算机网络中可以识别的地址，也就是IP。</a></p>
+<p>第一站就是在我们发请求的浏览器，学过计算机网络的都知道，在互联网中寻找一个主机都是通过IP来寻找的，那么在网络层中路由器只能通过IP来寻找目的主机，那么我们如果输入<a href="http://www.baidu.com,路由器咋知道在哪个服务器,所以我们要在浏览器将www.baidu.com翻译一下,翻译成计算机网络中可以识别的地址,也就是ip./">www.baidu.com，路由器咋知道在哪个服务器，所以我们要在浏览器将www.baidu.com翻译一下，翻译成计算机网络中可以识别的地址，也就是IP。</a></p>
 <p>浏览器中通过DNS服务器将我们输入的域名解析成计算机网络中可以识别的IP地址(如果你浏览器输入的是ip这里就当我没说直接跳到下一站。)</p>
 <h3 id="2-2-封装HTTP数据包"><a href="#2-2-封装HTTP数据包" class="headerlink" title="2.2 封装HTTP数据包"></a>2.2 封装HTTP数据包</h3><p>探索第二站，封装HTTP数据包站</p>
 <p>封装HTTP数据包，首先知道什么是HTTP数据包，HTTP数据包由请求行、请求头部、空行和请求数据四部分组成。</p>
@@ -537,7 +558,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/12/21/%E6%8E%A2%E7%B4%A2Http%E4%B9%8B%E6%97%85/">http://example.com/2020/12/21/%E6%8E%A2%E7%B4%A2Http%E4%B9%8B%E6%97%85/</a>
+                    <a href="http://linglongchen.github.io/2020/12/21/%E6%8E%A2%E7%B4%A2Http%E4%B9%8B%E6%97%85/">http://linglongchen.github.io/2020/12/21/%E6%8E%A2%E7%B4%A2Http%E4%B9%8B%E6%97%85/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -613,8 +634,8 @@
 <script>
     let gitalk = new Gitalk({
         clientID: 'bb1697066105d19c787b',
-        clientSecret: '5f2fcf1aa3ec3b79fcbc3966a081b083759394b3',
-        repo: 'blog-comments',
+        clientSecret: '27b927e8c4d9a7114e18e2c55fa888de33599a93',
+        repo: 'linglongchen.github.io',
         owner: 'linglongchen',
         admin: "linglongchen",
         id: '2020-12-21T14-57-13',
@@ -652,7 +673,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="探索Http之旅">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="探索Http之旅">
                         
                         <span class="card-title">探索Http之旅</span>
                     </div>
@@ -690,7 +711,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Hello World">
                         
                         <span class="card-title">Hello World</span>
                     </div>
@@ -914,8 +935,6 @@
             
             
             
-            
-            
             <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
@@ -932,7 +951,7 @@
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/linglongchen" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1083,6 +1102,16 @@ $(function () {
 
     <!-- Baidu Analytics -->
 
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
     <!-- Baidu Push -->
 
 <script>
@@ -1100,8 +1129,6 @@ $(function () {
 </script>
 
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
