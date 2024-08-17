@@ -13,7 +13,7 @@
 
 
 ### 定义SPI标准接口
-```
+```Java
 /**
  * @author chenlingl
  * @version 1.0
@@ -37,7 +37,7 @@ public interface AnimalSpi {
 ```
 
 ### 定义SPI的实现类
-```
+```Java
 /**
  * @author chenlingl
  * @version 1.0
@@ -58,7 +58,7 @@ public class CatSpiService implements AnimalSpi {
     }
 }
 ```
-```
+```Java
 /**
  * @author chenlingl
  * @version 1.0
@@ -82,7 +82,7 @@ public class DogSpiService implements AnimalSpi {
 
 
 ### SPI实现类注册
-```
+```Java
 /**
  * @author chenlingl
  * @version 1.0
@@ -107,7 +107,7 @@ public class SpiClassLoader {
 
 
 ### SPI实现类的工厂模式
-```
+```Java
 /**
  * @author chenlingl
  * @version 1.0
@@ -132,13 +132,13 @@ public class SpiFactory {
 
 
 ### 定义SPI的实现路径
+![Dingtalk_20240817124823.jpg](https://s2.loli.net/2024/08/17/7Y5GAKPuNwhfDZq.jpg)
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c9e90cc90a844c3995d1c758b9575841~tplv-k3u1fbpfcp-watermark.image?)
 
 
 
 ### SPI实现类调用
-```
+```Java
 /**
  * @author chenlingl
  * @version 1.0
@@ -160,4 +160,6 @@ public class SpiController {
 > 测试请求链接：http://localhost:8080/executeSpi?source=com.modules.boot.spi.service.DogSpiService
 
 
-![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f11f7483bf114d5493d9e58d14e80053~tplv-k3u1fbpfcp-watermark.image?)
+![Dingtalk_20240817124851.jpg](https://s2.loli.net/2024/08/17/pNKx5YwV9PHXntT.jpg)
+
+

@@ -10,8 +10,8 @@
 依赖关系在实际开发过程中经常使用的一种关系，往往会存在我们使用的client类需要引用supplier类中的某些方法，因此我们需要依赖supplier类，引用它的方法实现client类中的功能。并且如果更改suipplier类可能还需要更改client，两者存在supplier影响clinet的情况。
 
 通过UML图表示如下：
+![Dingtalk_20240817125118.jpg](https://s2.loli.net/2024/08/17/rAawUgEtdC6ljx4.jpg)
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/567b5e3b85ae41b59a4abbb5834af5b5~tplv-k3u1fbpfcp-zoom-1.image)
 
 从上图中可以看到依赖的关系是虚线+开口箭头表示的。其实也好理解，依赖并不是一种很强的关系，因为更改了supplier类只是可能会影响client类，而不是一定会影响client类，所以用虚线也好理解。
 
@@ -24,7 +24,7 @@
 
 在Java的具体实现中如下：
 
-```
+```Java
 /**
  * @author chenlingl
  * @version 1.0
@@ -56,12 +56,10 @@ public class Supplier {
 ```
 
   
-
-
   
 
 
-```
+```Java
 /**
 * @author chenlingl
 * @version 1.0
@@ -94,7 +92,7 @@ public class Supplier {
   
 
 
-```
+```Java
 /**
 * @author chenlingl
 * @version 1.0
@@ -133,12 +131,12 @@ public class Supplier {
 在UML中表示如下：
 
 双向关联
+![Dingtalk_20240817125304.jpg](https://s2.loli.net/2024/08/17/ITl5W1EYbPC64nU.jpg)
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a73e208f7d9d4b71b8650e51cbefe1d5~tplv-k3u1fbpfcp-zoom-1.image)
 
 单向关联
+![Dingtalk_20240817125317.jpg](https://s2.loli.net/2024/08/17/vK7XoVZDCjg5WmH.jpg)
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/adadc253c77546d5bcb1dd2842839fbb~tplv-k3u1fbpfcp-zoom-1.image)
 
 关联关系在实际使用中需要实现任何一项功能：
 
@@ -146,7 +144,7 @@ public class Supplier {
 
 在Java中的具体实现：
 
-```
+```Java
 /**
 * @author chenlingl
 * @version 1.0
@@ -175,15 +173,15 @@ public class Association {
 独立的意义就在多个类是可以独立存在的，比如乐高的积木，我们可以通过乐高砖块搭建一个城堡，那么一个个的乐高砖块就是独立的类，这些独立存在的类可以搭建我们想要的城堡，还可以搭建桥梁、动物等等。即使这些乐高砖块脱离了城堡也可以随意的去搭建其它的模型。
 
 在UML中表示如下：
+![Dingtalk_20240817125250.jpg](https://s2.loli.net/2024/08/17/aycnuS5kiE2G8K1.jpg)
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/813ba4e7928448d894e663ef31c9a098~tplv-k3u1fbpfcp-zoom-1.image)
 
   
 
 
 在Java中体现如下：
 
-```
+```Java
 /**
 * @author chenlingl
 * @version 1.0
@@ -221,12 +219,12 @@ public class Brick {
 从实际开发中举例来说，我所接触的业务是物流行业，那么在物流行业中我们会实例化一个物订单的主体，这个主体由包裹、收发件人等信息组成，通常我们都会使用一个状态机实体来表示订单的物流状态，比如揽收、分拨、干线、派送等，那么如果物流订单丢失了，那么这个订单的状态机实体也就无意义了，因此这个状态机的主体数据已经丢失了，这个状态机也没有可以表示的意义了。
 
 在UML中体现如下：
+![Dingtalk_20240817125235.jpg](https://s2.loli.net/2024/08/17/z8ImCc6tjbvrfR2.jpg)
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c327c50418594d3bbfcfc7a0db580022~tplv-k3u1fbpfcp-zoom-1.image)
 
 在Java中体现如下：
 
-```
+```Java
 /**
 * @author chenlingl
 * @version 1.0
@@ -241,7 +239,7 @@ public class LogisticsOrder {
 }
 ```
 
-```
+```Java
 
 
 /**
@@ -287,16 +285,14 @@ public class OrderStatusMachine {
 
 在UML中体现关系如下：
 
-  
+  ![Dingtalk_20240817125219.jpg](https://s2.loli.net/2024/08/17/Iv29blSUMYWx5rN.jpg)
 
-
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b99716fde16b4e24a0a697418d987231~tplv-k3u1fbpfcp-zoom-1.image)
 
 继承关系中child可以继承parent类中所有的功能。
 
 在Java中实现如下：
 
-```java
+```Java
 /**
 * @author chenlingl
 * @version 1.0
@@ -353,14 +349,13 @@ public class OperateProduct extends BaseProduct{
 在Java语言中实现关系是通过implements关键字实现的。
 
 在UML中体现关系如下：
-
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ec56a136a9634c1e84c3b90826629134~tplv-k3u1fbpfcp-zoom-1.image)
+![Dingtalk_20240817125204.jpg](https://s2.loli.net/2024/08/17/bMv6j5LKOdUhERn.jpg)
 
 实现的关系需要存在interface，即提供实现方法的接口，interface提供方法，classImpl和classImpl2实现Interface中的process方法。
 
 在Java中体现如下：
 
-```
+```Java
 /**
 * @author chenlingl
 * @version 1.0
