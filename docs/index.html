@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="google-site-verification" content="xuKHIeq8mb0pzS7lBTb7jiiozJ815VBsxq_CRLpaH0Y" />
+  <meta charset="UTF-8">
+  <title>logicChen | 陈汤姆</title>
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css">
+  <style>
+    .markdown-section a:not(:hover) {
+      text-decoration: none;
+    }
+    .sidebar {
+      padding-top: 20px;
+    }
+    .sidebar h1 {
+      font-weight: normal;
+    }
+    .sidebar blockquote {
+      margin-left: 12px;
+    }
+    section.content {
+      padding-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+<script>
+  window.$docsify = {
+    name: 'logicChen',
+    repo: 'linglongchen/linglongchen.github.io',
+    auto2top: true,
+    coverpage: true,
+    loadSidebar: true,
+    maxLevel: 4,
+    subMaxLevel: 2,
+    search: {
+      paths: 'auto',
+      placeholder: '🔍 Type to search ',
+      noData: '😞 No Results! ',
+      depth: 6
+    },
+    pagination: {
+      previousText: 'PREVIOUS',
+      nextText: 'NEXT',
+      crossChapter: true
+    },
+    plugins: [
+      function (hook, vm) {
+        hook.beforeEach(function (html) {
+          return html
+            + '<hr/>'
+            + '上次更新：{docsify-updated} '
+        })
+      },
+      function (hook, vm) {
+        hook.mounted(function() {
+          var div = Docsify.dom.create('div')
+          div.id = 'gitalk-container'
+          var main = Docsify.dom.getNode('#main')
+          div.style = `width: ${main.clientWidth}px; margin: 0 auto 20px;`
+          Docsify.dom.appendTo(Docsify.dom.find('.content'), div)
+        })
+
+        hook.doneEach(function() {
+          var el = document.getElementById('gitalk-container')
+          while(el.hasChildNodes()) el.removeChild(el.firstChild)
+          gitalk.render('gitalk-container')
+        })
+      }
+    ]
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'bb1697066105d19c787b',
+    clientSecret: '1733b16a70f57c16ab12044ef4c6aa6045ad37cd',
+    repo: 'comment',
+    owner: 'linglongchen',
+    admin: ['linglongchen']
+  });
+</script>
+<script>
+  // if (typeof navigator.serviceWorker !== 'undefined') {
+  //   navigator.serviceWorker.register('sw.js')
+  // }
+</script>
+</html>
