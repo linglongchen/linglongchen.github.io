@@ -1,3 +1,10 @@
+作者： 陈汤姆
+<br/>博客：[https://github.com/linglongchen/linglongchen.github.io](https://github.com/linglongchen/linglongchen.github.io)
+
+>自我学习的积累！😄
+
+
+
 最近跟项目组的同事封闭开发搞项目，偶尔发起一下头脑风暴，涉及到MQ的一个问题，然后就发起了一次关于分布式一致性问题的讨论，于是就说起了CAP理论和BASE理论，趁着这个机会回顾下自己的知识。
 
   

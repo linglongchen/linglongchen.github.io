@@ -1,3 +1,11 @@
+作者： 陈汤姆
+<br/>博客：[https://github.com/linglongchen/linglongchen.github.io](https://github.com/linglongchen/linglongchen.github.io)
+
+>自我学习的积累！😄
+
+
+
+
 
 > SPI全称Service Provider Interface，是Java提供的一套用来被第三方实现或者扩展的API，它可以用来对框架的接口进行扩展。俗称面向服务编程
 > 与之相对的就是API，API俗称面向接口编程，两者在实现维度上不同，但是核心思想是相同的，都是提高可扩展性。
