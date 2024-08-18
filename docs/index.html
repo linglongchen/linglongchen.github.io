@@ -77,6 +77,7 @@
     ]
   }
 </script>
+<script src="/assets/js/md5.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
@@ -84,7 +85,7 @@
 <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 <script>
   var gitalk = new Gitalk({
-    id: location.pathname,
+    id: md5(location.pathname),
     clientID: 'bb1697066105d19c787b',
     clientSecret: '1733b16a70f57c16ab12044ef4c6aa6045ad37cd',
     repo: 'comment',
