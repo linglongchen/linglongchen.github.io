@@ -39,6 +39,7 @@
 - 生产问题排查
 	- [处理生产环境的MySQL死锁问题](/md/idea-plugin/生产问题排查/处理生产环境的MySQL死锁问题.md)
 	- [生产事故分析RocketMQ的负载均衡](/md/idea-plugin/生产问题排查/生产事故分析RocketMQ的负载均衡.md)
+	- [MAT排查内存泄漏思路](/md/idea-plugin/生产问题排查/MAT排查内存泄漏思路.md)
 - 工作总结
 	- [关于工作汇报-一线开发者](/md/工作总结/关于工作汇报-一线开发者.md)
 - 浮生随笔
