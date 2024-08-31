@@ -60,19 +60,38 @@ MessageQueue类似Kafka中的partition。
 - 客户端启动时调用Producer#start启动Producer
 - 客户端通过调用Producer发送消息，分为三种模式，异步发送、同步发送、单向发送
 - 在Producer内部首先会查询topic信息、broker信息以及选择一个MessageQueue
+- 通过netty创建远程连接请求
+- 通过netty调用远程请求，将数据发送到查询到的broker机器
+- 处理发送响应结果
+
+
+##### 源码梳理：
+![-producerbroker.jpg](https://s2.loli.net/2024/08/31/ArhsQOpHi7eEDwX.jpg)
 ### 存储消息
 
 
+
+##### 源码梳理：
+![-brokerproducer.jpg](https://s2.loli.net/2024/08/31/AgSRvrLHaTopqtX.jpg)
 ### 分发消息
 
 
+
+##### 源码梳理：
+![-commitLogconsumerQueue.jpg](https://s2.loli.net/2024/08/31/5WjaPC6OtYJqXnx.jpg)
 ### 拉取消息
 
 
+##### 源码梳理：
+![-brokerconsumerconsumer.jpg](https://s2.loli.net/2024/08/31/kA7cxfrlF1XePZY.jpg)
 ### 消费消息
 
 
 
+
+
+##### 源码梳理：
+![-consumerbroker.jpg](https://s2.loli.net/2024/08/31/quJiGY7ActWSl9n.jpg)
 
 
 
