@@ -25,6 +25,7 @@
 - 中间件
 	- MQ
 		- [从源码分析RocketMQ的幂等问题](/md/MQ/从源码分析RocketMQ不保证幂等的三个原因.md)
+		- [RocketMQ全流程总结](/md/MQ/RocketMQ总结.md)
 - 网络编程
 - Spring
 - NoSqL
