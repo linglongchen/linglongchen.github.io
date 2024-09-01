@@ -25,6 +25,11 @@ producer和consumer从NameServer获取broker的ip地址等信息，发送消息�
 
 MessageQueue类似Kafka中的partition。
 
+
+### ConsumerQueue
+关联消费者的队列数据，存在物理上的文件，文件中存储消息CommitLog的位点、消息长度、tag的hashCode。
+
+![ConsumerQueue.png](https://s2.loli.net/2024/09/01/rmU9DC8VSqohsLK.png)
 ### Tag
 标签是Apache RocketMQ 提供的细粒度消息分类属性，可以在主题层级之下做消息类型的细分。消费者通过订阅特定的标签来实现细粒度过滤。
 ![messagefilter0-ad2c8360f54b9a622238f8cffea12068.png](https://s2.loli.net/2024/08/31/eqvSnybLFi1DBhQ.png)
@@ -55,6 +60,9 @@ MessageQueue类似Kafka中的partition。
 
 
 ### 发送消息
+
+##### 核心逻辑：消费者发送消息给Broker
+
 ![RocketMQ-producer.png](https://s2.loli.net/2024/08/28/iULKc9ODCjx1Xu7.png)
 
 ##### 整体流程
@@ -70,6 +78,8 @@ MessageQueue类似Kafka中的partition。
 ![-producerbroker.jpg](https://s2.loli.net/2024/08/31/ArhsQOpHi7eEDwX.jpg)
 ### 存储消息
 
+##### 核心逻辑：Broker保存接收到Producer发送的消息
+
 ![Drawing 2024-09-01 09.50.59.excalidraw.png](https://s2.loli.net/2024/09/01/5a9zQhjCESkF7vw.png)
 ##### 整体流程：
 1. Producer作为Netty客户端将消息通过channel发送到Broker
@@ -83,17 +93,29 @@ MessageQueue类似Kafka中的partition。
 ![-brokerproducer.jpg](https://s2.loli.net/2024/08/31/AgSRvrLHaTopqtX.jpg)
 ### 分发消息
 
+##### 核心逻辑：Broker将消息的位点分发到ConsumerQueue
 
+![.png](https://s2.loli.net/2024/09/01/bW5JpkhoVEMPvid.png)
+##### 整体流程：
+1. Broker初始化分发消息的线程
+2. 本地线程轮询CommitLg
+3. 开始执行doDispatch分发逻辑
+4. 通过topic+queueId确认唯一的ConsumerQueue
+5. 获取ConsumerQueu的MappedFile
+6. 通过MappedFile写入到磁盘
 
 ##### 源码梳理：
 ![-commitLogconsumerQueue.jpg](https://s2.loli.net/2024/08/31/5WjaPC6OtYJqXnx.jpg)
 ### 拉取消息
+##### 核心逻辑：Consumer主动从Broker拉取消息
+
 
 
 ##### 源码梳理：
 ![-brokerconsumerconsumer.jpg](https://s2.loli.net/2024/08/31/kA7cxfrlF1XePZY.jpg)
 ### 消费消息
 
+##### 核心逻辑：Consumer消费消息
 
 
 
