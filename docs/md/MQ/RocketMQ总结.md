@@ -9,6 +9,7 @@
 ### NameServer
 为 Broker 提供服务发现和路由信息的组件。NameServer 维护一个路由表，客户端可以通过它来找到生产者和消费者的 Broker。
 ![Drawing 2024-08-31 23.02.36.excalidraw.png](https://s2.loli.net/2024/08/31/1EFuXsdqMkRx4IP.png)
+producer和consumer从NameServer获取broker的ip地址等信息，发送消息或者消费消息时直接从broker获取。因此broker同时和producer和consumer建立长连接。
 ### Broker
 消息中间件的服务器节点，负责消息的存储和转发。一个集群中可以包含多个 Broker 实例。
 
@@ -69,7 +70,14 @@ MessageQueue类似Kafka中的partition。
 ![-producerbroker.jpg](https://s2.loli.net/2024/08/31/ArhsQOpHi7eEDwX.jpg)
 ### 存储消息
 
-
+![Drawing 2024-09-01 09.50.59.excalidraw.png](https://s2.loli.net/2024/09/01/5a9zQhjCESkF7vw.png)
+##### 整体流程：
+1. Producer作为Netty客户端将消息通过channel发送到Broker
+2. Broker作为Netty服务端监听指定端口接收Producer消息
+3. Netty接收消息后会通过Message中的类型执行不同的Processor，接收消息的场景下使用SendMessageProcessor。
+4. 消息会通过CommitLog文件进行存储，CommitLog存储相同topic下的所有的消息
+5. 为了快速访问消息，避免文件过大，会将CommitLog拆分为不同的文件，即MappedFile
+6. 消息最终会写入MappedFile保存在磁盘
 
 ##### 源码梳理：
 ![-brokerproducer.jpg](https://s2.loli.net/2024/08/31/AgSRvrLHaTopqtX.jpg)
