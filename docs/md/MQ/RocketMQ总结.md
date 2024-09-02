@@ -108,22 +108,44 @@ MessageQueue类似Kafka中的partition。
 ![-commitLogconsumerQueue.jpg](https://s2.loli.net/2024/08/31/5WjaPC6OtYJqXnx.jpg)
 ### 拉取消息
 ##### 核心逻辑：Consumer主动从Broker拉取消息
-
-
+![.png](https://s2.loli.net/2024/09/02/3n7Bfq4RdV28NmK.png)
+##### 整体流程：
+1. Consumer内部初始化拉取线程
+2. 线程通过Netty发起拉取消息的请求
+3. Broker服务端接收请求处理
+4. 拉取消息通过topic+queueId确认ConsumerQueue，拿到消息的位点offset
+5. 通过offset在CommitLog中获取具体的消息体
+6. 通过Netty响应给Consumer
+7. Consumer接收到消息体后续执行消费
 
 ##### 源码梳理：
-![-brokerconsumerconsumer.jpg](https://s2.loli.net/2024/08/31/kA7cxfrlF1XePZY.jpg)
+![-brokerconsumerconsumer.jpg](https://s2.loli.net/2024/09/02/Wpd4PoK7BecvtJH.jpg)
 ### 消费消息
 
 ##### 核心逻辑：Consumer消费消息
-
-
+![.png](https://s2.loli.net/2024/09/02/GvlSHVkM5hwqB3C.png)
+##### 核心流程：
+1. Consumer主动拉取消息
+2. 对拉取的消息做数量校验和大小校验
+3. 选择消费模式，顺序模式ConsumeMessageOrderlyService和并发模式ConsumeMessageConcurrentlyService
+4. 组装ConsumerRequest（本质是一个线程）
+5. ConsumerReuqest执行业务消费逻辑，状态校验、更新位点
 
 
 ##### 源码梳理：
 ![-consumerbroker.jpg](https://s2.loli.net/2024/08/31/quJiGY7ActWSl9n.jpg)
 
 
+
+## 总结
+- 梳理RocketMQ中的核心概念
+- 将RocketMQ的整体流程拆分为五个流程：
+	- 发送消息流程
+	- 保存消息流程
+	- 分发消息流程
+	- 拉取消息流程
+	- 消费消息流程
+- 每个流程梳理对应源码加深理解
 
 ## 参考
 https://rocketmq.apache.org/zh/docs/domainModel/04message
