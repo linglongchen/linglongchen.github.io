@@ -140,7 +140,7 @@ MessageQueue类似Kafka中的partition。
 ## 总结
 - 梳理RocketMQ中的核心概念
 - 将RocketMQ的整体流程拆分为五个流程：
-	- 发送消息流程
+	- 发送消息流程 
 	- 保存消息流程
 	- 分发消息流程
 	- 拉取消息流程
