@@ -59,8 +59,9 @@ public void test() {
 	
 }
 ```
-![[Pasted image 20240926125052.png]]
-![[Pasted image 20240926125123.png]]
+
+![Pasted image 20240926125052.png](https://s2.loli.net/2024/09/28/LcIzroj8GBlmWqN.png)
+![Pasted image 20240926125123.png](https://s2.loli.net/2024/09/28/cN6x3oHmtRbF2rK.png)
 
 
 可以看到由于JDK17中引入模块系统，由于模块的封闭性，反射访问 `ClassLoader` 的 `defineClass` 方法访问被拒绝。
