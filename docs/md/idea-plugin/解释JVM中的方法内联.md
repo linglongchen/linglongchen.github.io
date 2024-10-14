@@ -1,4 +1,4 @@
-# 处理生产环境的MySQL死锁问题
+# 解释JVM中的方法内联
 
 作者： 陈汤姆
 <br/>博客：[https://github.com/linglongchen/linglongchen.github.io](https://github.com/linglongchen/linglongchen.github.io)

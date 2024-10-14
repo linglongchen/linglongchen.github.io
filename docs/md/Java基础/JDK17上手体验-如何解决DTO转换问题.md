@@ -24,7 +24,7 @@ JDK 17 引入了一系列新特性和改进。以下是一些主要的新特性�
    `switch (day) {       case MONDAY, FRIDAY -> System.out.println("Happy Day!");       case TUESDAY -> System.out.println("Second day of the week");   }`
 
 5. **Foreign Function & Memory API (预览)**：
-    
+
     - 允许 Java 程序调用本地代码和操作本地内存，提供了一种与非 Java 代码交互的新方式。
 6. **新语言功能**：
     
